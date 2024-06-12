@@ -11,6 +11,7 @@ resource "aws_vpc" "minecraft_vpc" {
 resource "aws_subnet" "minecraft_subnet" {
   vpc_id            = aws_vpc.minecraft_vpc.id
   cidr_block        = "10.0.1.0/24"
+  availability_zone  = "us-west-2a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -60,10 +61,10 @@ resource "aws_security_group" "minecraft_sg" {
 }
 
 resource "aws_instance" "minecraft_server" {
-  ami           = "ami-0c55b159cbfafe1f0"
+  ami           = "ami-0cf2b4e024cdb6960"
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.minecraft_subnet.id
-  security_groups = [aws_security_to_group.minecraft_sg.id]
+  security_groups = [aws_security_group.minecraft_sg.id]
 
   tags = {
     Name = "MinecraftServer"
