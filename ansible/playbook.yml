@@ -1,0 +1,4 @@
+- hosts: minecraft_servers
+  become: yes
+  roles:
+    - minecraft
