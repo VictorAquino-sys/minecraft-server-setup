@@ -8,7 +8,7 @@
   docker_image:
     name: "minecraft_server"
     source: load
-    load_path: "/home/ubuntu/minecraft_server.tar"
+    load_path: "/home/konnichiwa/Desktop/minecraft_server.tar"
 
 - name: Run Minecraft Docker Container
   docker_container:

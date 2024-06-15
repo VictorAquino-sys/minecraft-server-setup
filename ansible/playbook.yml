@@ -4,11 +4,11 @@
   tasks:
     - name: Transfer Docker image tarball to EC2
       copy:
-        src: "/home/ubuntu/Desktop/minecraft_server.tar"
-        dest: "/home/ubuntu/minecraft_server.tar"
+        src: "/home/konnichiwa/Desktop/minecraft_server.tar"
+        dest: "/home/konnichiwa/Desktop/minecraft_server.tar"
     
     - name: Transfer SSH key to EC2
       copy:
-        src: "/home/ubuntu/Desktop/mykeypair.pem"
-        dest: "/home/ubuntu/mykeypair.pem"
+        src: "/home/konnichiwa/Desktop/mykeypair.pem"
+        dest: "/home/konnichiwa/Desktop/mykeypair.pem"
         mode: '0400'  # Ensures the key file is not publicly readable
