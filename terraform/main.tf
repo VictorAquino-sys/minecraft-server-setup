@@ -46,6 +46,13 @@ resource "aws_security_group" "minecraft_sg" {
   vpc_id      = aws_vpc.minecraft_vpc.id
 
   ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 25565
     to_port     = 25565
     protocol    = "tcp"
@@ -65,6 +72,7 @@ resource "aws_instance" "minecraft_server" {
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.minecraft_subnet.id
   security_groups = [aws_security_group.minecraft_sg.id]
+  key_name = "mykeypair"
 
   tags = {
     Name = "MinecraftServer"
