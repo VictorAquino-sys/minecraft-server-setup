@@ -26,7 +26,15 @@ cd minecraft-server-setup
 
 2. Terraform Initialization and Application
 Navigate to the terraform/ directory:
+<<<<<<< HEAD
 
 cd terraform
 terraform init
 terraform apply
+=======
+cd terraform
+terraform init
+terraform apply
+
+docker restart minecraft_server
+>>>>>>> f647edf274db2b12a8526e88485a07ed706a33a0
