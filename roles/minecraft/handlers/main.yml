@@ -1,0 +1,5 @@
+---
+- name: restart minecraft
+  docker_container:
+    name: minecraft_server
+    state: restarted
